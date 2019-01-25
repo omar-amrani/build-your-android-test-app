@@ -13,14 +13,31 @@ While building this app, the main files that you'll be interacting with are:
 ## 2- Getting started with your first Android app
 ### a- Download and Install Android studio
 
-### b- Create a new Android studio project
+Android Studio is the official development environment for Google's Android operating system. You easily download it by going to this [link](https://developer.android.com/studio/)
 
+### b- Create a new Android Studio project
+- First open Android Studio and click on "Start a new Android Studio project"
+- Set your app name and the project location
+- Set the devices you want your app to run on (Optional). We will use the default values
+- Select your app Activity (depending on the type of app you are building). In our example, we will use the "Basic Activity"
+- Click on "Finish"
 
+![](https://downloads.intercomcdn.com/i/o/99307924/139daa638a7ad964db124a70/Screen+Recording+2019-01-25+at+05.29+p.m..gif)
 
 ### c- Installing Intercom SDK for your Android app
+To [install Intercom](https://developers.intercom.com/installing-intercom/docs/android-installation#section-step-1-install-intercom) in our Android app, you'll need to add the following dependency to the build.gradle (Module: app) file
+```
+dependencies {
+    compile 'io.intercom.android:intercom-sdk:5.+'
+}
+```
+Please note that you can change the '5.+' to whatever SDK version you want to use
 
-### d- Updating "" with the correct permissions
 
+### d- Updating "AndroidManifest.xml" with the correct permissions
+
+In order to be able to upload an image/GIF in the Intercom messenger, the app will need first to get the user's permission to access the galery. This can easily be done by adding the following line to the AndroidManifest.xml file
+`<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>`. You can add it just before `<application>`
 
 
 ### e- Initializing Intercom for your Android app
