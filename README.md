@@ -5,10 +5,10 @@ This repository aims to help you get started building your first Android app int
 
 While building this app, the main files that you'll be interacting with are:
 
-- **AppDelegate.swift**: 
-- **ViewController.swift**: 
-- **info.plist**:
-- **Main.storyboard**: it's a visual representation of the user interface of an iOS application, showing screens of content and the connections between those screens.
+- **AndroidManifest.xml**: The manifest presents essential information about the application to the Android system, information the system must have before it can run any of the application's code (eg. App name, permissions ...). This file can be found under the manifests directory. More information about can be [here](https://stuff.mit.edu/afs/sipb/project/android/docs/guide/topics/manifest/manifest-intro.html)
+- **MainActivity Class**: The main activity begins immediately after the user logs in. Once the main activity is running, it can launch other activities, which in turn can launch sub-activities. When the application exits, it does so by terminating the main activity. All other activities terminate in a cascade from within the main activity. in this tutorial, we will use this class to define all our functions.
+- **activity_main.xml** & **content_main.xml**: These two files are used to build your app UI. The activity_main.xml is the "outer" part of the activity layout (toolbar, action button, etc.) and content_main.xml is the inner part where you put your own layout (the blank space).
+- **build.gradle**: This file is located in the root project directory andtells Gradle which modules it should include when building your app. Gradle is a dependency management tool.
 
 ## 2- Getting started with your first Android app
 ### a- Download and Install Android studio
