@@ -25,7 +25,7 @@ Android Studio is the official development environment for Google's Android oper
 ![](https://downloads.intercomcdn.com/i/o/99307924/139daa638a7ad964db124a70/Screen+Recording+2019-01-25+at+05.29+p.m..gif)
 
 ### c- Installing Intercom SDK for your Android app
-To [install Intercom](https://developers.intercom.com/installing-intercom/docs/android-installation#section-step-1-install-intercom) in our Android app, you'll need to add the following dependency to the build.gradle (Module: app) file
+To [install Intercom](https://developers.intercom.com/installing-intercom/docs/android-installation#section-step-1-install-intercom) in our Android app, you'll need to add the following dependency to the `build.gradle (Module: app)` file
 ```
 dependencies {
     compile 'io.intercom.android:intercom-sdk:5.+'
