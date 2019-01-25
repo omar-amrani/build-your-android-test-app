@@ -81,7 +81,7 @@ Finally **make sure to import Intercom by add "import Intercom" to the top of yo
 
 ## 3- Next steps
 
-You can enrich your Android app but addind some extra features to it:
+You can enrich your Android app but adding some extra features to it:
 - [Updating a user's data and sending custom attributes](https://developers.intercom.com/installing-intercom/docs/android-configuration#section-update-a-user)
 - [Tracking events](https://developers.intercom.com/installing-intercom/docs/android-configuration#section-submit-an-event)
 - [Displaying the Help center](https://developers.intercom.com/installing-intercom/docs/android-configuration#section-articles-help-center)
