@@ -8,6 +8,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+
+import io.intercom.android.sdk.Intercom;
+import io.intercom.android.sdk.identity.Registration;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,14 +22,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
 
     @Override
@@ -49,4 +45,35 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void registerUserByID(View v) {
+        EditText identifier;
+        identifier   = (EditText)findViewById(R.id.identifier);
+        String identifier_txt= identifier.getText().toString();
+        Registration registration;
+        if (identifier_txt.contains("@")) {
+            registration = Registration.create().withEmail(identifier_txt);
+        }
+        else {
+            registration = Registration.create().withUserId(identifier_txt);
+
+        }
+        Intercom.client().registerIdentifiedUser(registration);
+    }
+
+    public void logout(View v) {
+
+        Intercom.client().logout();
+    }
+
+    public void displayMessenger(View v) {
+
+        Intercom.client().setLauncherVisibility(Intercom.Visibility.VISIBLE);
+    }
+
+    public void hideMessenger(View v) {
+
+        Intercom.client().setLauncherVisibility(Intercom.Visibility.GONE);
+    }
+
 }
