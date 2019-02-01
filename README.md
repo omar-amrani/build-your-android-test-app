@@ -58,6 +58,10 @@ The "api key" and "app id" values can be retrieved from [Intercom platform --> S
 
 ### f- Adding the UI elements to your Android app
 
+In this section, we will add the relevant UI objects (TextViews, Plain text and buttons) to have a UI that allows users to register/signout from Intercom as well display and hide the messenger. All you need to do here is go to your main_activity.xml file (Design tab) then drag and drop the desired UI elements. 
+**Please make sure to assign an id to your "Plain text" field as we'll need it to retrieve the user_id/email entered. You can easily do so by double clicking on the desired element then updating the ID attribute on the right side**
+
+![](https://downloads.intercomcdn.com/i/o/100695668/1ffe294e2c1707810c1701cf/ui-android.gif)
 
 
 ### g- Interacting with your app's UI elements.
