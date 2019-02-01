@@ -42,6 +42,18 @@ In order to be able to upload an image/GIF in the Intercom messenger, the app wi
 
 ### e- Initializing Intercom for your Android app
 
+To do so, you'll need to create a new Java class that extends from the Application class then  override the "onCreate" method to initiliaze Intercom. Basically the newly created class would look like:
+```
+public class CustomApplication extends Application {
+    @Override public void onCreate() {
+        super.onCreate();
+        Intercom.initialize(this, "your api key", "your app id");
+   }
+}
+```
+The "api key" and "app id" values can be retrieved from [Intercom platform --> Settings --> Installation --> Android](https://app.intercom.io/a/apps/_/settings/android)
+
+![](https://files.readme.io/e1ef3d6-Android_Install.png)
 
 
 ### f- Adding the UI elements to your Android app
