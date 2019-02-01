@@ -107,7 +107,8 @@ import io.intercom.android.sdk.identity.Registration;
 ```
 Also **make sure to use "View v" as input of all your method so that they can be accessible to your UI element**
 
-Finally, all you need to do is go back to you "main_activity.xml" file then click on the each button and assign the corresponding function to the onClick attribute as shown 👇 :
+Finally, all you need to do is go back to you "main_activity.xml" file then click on the each button and assign the corresponding function to the onClick attribute as shown 👇:
+
 ![](https://downloads.intercomcdn.com/i/o/100705824/6b41ed5b5237bba8ba314ca2/Screen+Recording+2019-02-01+at+04.49+p.m..gif)
 
 ### h- Run your Android app
@@ -120,3 +121,4 @@ You can enrich your Android app but adding some extra features to it:
 - [Updating a user's data and sending custom attributes](https://developers.intercom.com/installing-intercom/docs/android-configuration#section-update-a-user)
 - [Tracking events](https://developers.intercom.com/installing-intercom/docs/android-configuration#section-submit-an-event)
 - [Displaying the Help center](https://developers.intercom.com/installing-intercom/docs/android-configuration#section-articles-help-center)
+- [Set up push notifications](https://developers.intercom.com/installing-intercom/docs/android-fcm-push-notifications)
