@@ -55,41 +55,60 @@ The "api key" and "app id" values can be retrieved from [Intercom platform --> S
 
 ![](https://files.readme.io/e1ef3d6-Android_Install.png)
 
+**Make sure to import the following libraries in your custom class**
+
+```
+import android.app.Application;
+import io.intercom.android.sdk.Intercom;
+```
+
 
 ### f- Adding the UI elements to your Android app
 
 In this section, we will add the relevant UI objects (TextViews, Plain text and buttons) to have a UI that allows users to register/signout from Intercom as well display and hide the messenger. All you need to do here is go to your main_activity.xml file (Design tab) then drag and drop the desired UI elements. 
 **Please make sure to assign an id to your "Plain text" field as we'll need it to retrieve the user_id/email entered. You can easily do so by double clicking on the desired element then updating the ID attribute on the right side**
 
-![](https://downloads.intercomcdn.com/i/o/100695668/1ffe294e2c1707810c1701cf/ui-android.gif)
+![](https://downloads.intercomcdn.com/i/o/100699314/3f867e10177db2d3e53a5c64/ezgif.com-resize.gif)
 
 
 ### g- Interacting with your app's UI elements.
 
-
-
-Let's now add the logic behind each of our button:
-- **_Register user_**: What we want here is to read the value entered in the text field then [register the user](https://developers.intercom.com/installing-intercom/docs/ios-installation#section-step-3-register-your-users) with Intercom using the user_id or email based on the value entered. The code we gonna be using here is:
+Let's now add the logic behind each of our button. All the methods will be defined in the MainActivity class.
+- **_Register user_**: What we want here is to read the value entered in the text field then [register the user](https://developers.intercom.com/installing-intercom/docs/android-installation#section-step-3-create-a-user) with Intercom using the user_id or email based on the value entered. The code we gonna be using here is:
 ```
-       let identifier = String(user_id_email_text_field.text!)
-        if identifier.contains("@"){
-            Intercom.registerUser(withEmail: identifier)
-           
-        } else {
-            
-            Intercom.registerUser(withUserId: identifier)
+       public void registerUserByID(View v) {
+        EditText identifier;
+        identifier   = (EditText)findViewById(R.id.identifier);
+        String identifier_txt= identifier.getText().toString();
+        Registration registration;
+        if (identifier_txt.contains("@")) {
+            registration = Registration.create().withEmail(identifier_txt);
         }
+        else {
+            registration = Registration.create().withUserId(identifier_txt);
+
+        }
+        Intercom.client().registerIdentifiedUser(registration);
+    }
 ```
 
-- **_Signout_**: This button will [logout](https://developers.intercom.com/installing-intercom/docs/ios-installation#section-how-to-unregister-a-user) the user (`Intercom.logout()`)
-- **_Display messenger_**: This button will make the [messenger widget visible](https://developers.intercom.com/installing-intercom/docs/ios-configuration#section-choose-how-the-launcher-appears-and-opens-for-your-users) (`Intercom.setLauncherVisible(true)`)
-- **_Hide messenger_**: This will hide the messenger widget (`Intercom.setLauncherVisible(false)`)
+- **_Signout_**: This button will [logout](https://developers.intercom.com/installing-intercom/docs/android-installation#section-how-to-unregister-a-user) the user (`Intercom.client().logout()`)
+- **_Display messenger_**: This button will make the [messenger widget visible](https://developers.intercom.com/installing-intercom/docs/android-configuration#section-choose-how-the-launcher-appears-and-opens-for-your-users) (`Intercom.client().setLauncherVisibility(Intercom.Visibility.VISIBLE)`)
+- **_Hide messenger_**: This will hide the messenger widget (`Intercom.Intercom.client().setLauncherVisibility(Visibility.GONE)`)
 
-At this stage, your View Controller should like like:
+At this stage, your MainActivity class should like like:
 
-![](https://downloads.intercomcdn.com/i/o/96369822/179385dabfec0a2af919b976/ViewController_swift.jpg)
+![](https://downloads.intercomcdn.com/i/o/100704211/216f7811f7b629e81429377a/image.png)
 
-Finally **make sure to import Intercom by add "import Intercom" to the top of your ViewController.swift file**
+**Make sure to import Intercom by adding the following line at the top of your MainActivity class**
+```
+import io.intercom.android.sdk.Intercom;
+import io.intercom.android.sdk.identity.Registration;
+```
+Also **make sure to use "View v" as input of all your method so that they can be accessible to your UI element**
+
+Finally, all you need to do is go back to you "main_activity.xml" file then click on the each button and assign the corresponding function to the onClick attribute as shown 👇 :
+![](https://downloads.intercomcdn.com/i/o/100705824/6b41ed5b5237bba8ba314ca2/Screen+Recording+2019-02-01+at+04.49+p.m..gif)
 
 ### h- Run your Android app
 
