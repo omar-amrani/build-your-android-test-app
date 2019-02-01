@@ -61,7 +61,7 @@ The "api key" and "app id" values can be retrieved from [Intercom platform --> S
 import android.app.Application;
 import io.intercom.android.sdk.Intercom;
 ```
-
+Also make sure to specify the custom class to use in your AndroidManifest.xml file by adding ` android:name=".CustomApplication"`. You can add it before `<activity>`.
 
 ### f- Adding the UI elements to your Android app
 
@@ -115,7 +115,7 @@ Finally, all you need to do is go back to you "main_activity.xml" file then clic
 
 Once your code is ready, all you need to do is hit the "Play" icon then select(create) the emulator device.
 
-
+![](https://downloads.intercomcdn.com/i/o/100719917/6c11f1b0ddcfad5343845bc9/Screen+Recording+2019-02-01+at+05.44+p.m..gif)
 
 
 ## 3- Next steps
