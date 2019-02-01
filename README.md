@@ -113,6 +113,9 @@ Finally, all you need to do is go back to you "main_activity.xml" file then clic
 
 ### h- Run your Android app
 
+Once your code is ready, all you need to do is hit the "Play" icon then select(create) the emulator device.
+
+
 
 
 ## 3- Next steps
