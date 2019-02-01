@@ -70,6 +70,12 @@ In this section, we will add the relevant UI objects (TextViews, Plain text and 
 
 ![](https://downloads.intercomcdn.com/i/o/100699314/3f867e10177db2d3e53a5c64/ezgif.com-resize.gif)
 
+Make sure to organize your UI elements using vertical and horizontal layout to prevent them from interfering with each other. Your "activity_main.xml" should look like:
+
+![](https://downloads.intercomcdn.com/i/o/100720745/2b28d8f533b351459695500e/image.png)
+
+More information about linear layouts can be found in [here](https://javatutorial.net/android-linear-layout-example).
+
 
 ### g- Interacting with your app's UI elements.
 
